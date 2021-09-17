@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>student update</h1>
+    <form action="/updation/{{editprof.id}}" method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" value="{{editprof.name}}" placeholder="Name"><br>
+        <input type="age" name="age" value="{{editprof.age}}" placeholder="Age"><br>
+        <input type="contact" name="contact"value="{{editprof.contact}}" placeholder="Phone"><br>
+        <button type="submit">update</button>
+    </form>

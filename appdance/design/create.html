@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>student</h1>
+    <form action="create" method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" id="n1" placeholder="Name"><br>
+        <input type="age" name="age" id="n2" placeholder="Age"><br>
+        <input type="contact" name="contact" id="n3" placeholder="Phone"><br>
+        <button>save</button>
+    </form>
+
+    <h1>view</h1>
+    <table border="1" width="25%">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Contact</th>
+            <th>delete</th>
+            <th>update</th>
+        </tr>
+        <tr>
+        {% for i in res %}
+            <td>{{i.name}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.contact}}</td>
+            <td><a href="delete/{{i.id}}">delete</a></td>
+            <td><a href="update/{{i.id}}">update</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
